@@ -5,9 +5,9 @@ int main(void)
     try {
         Bureaucrat A("A", 0);
     }
-    catch (const char *Ex)
+    catch (std::exception &e)
     {
-        std::cout << Ex << std::endl;
+        std::cout << e.what() << std::endl;
     }
     Bureaucrat B("B", 1);
     std::cout << B << std::endl;
@@ -19,12 +19,12 @@ int main(void)
     try {
         for (size_t i = 0; i < 100; i++)
         {
-            B.increment();
-            // B.decrement();
+            // B.increment();
+            B.decrement();
         }
     }
-    catch (const char *Ex)
+    catch (std::exception & e)
     {
-        std::cout << Ex << std::endl;
+        std::cout << e.what() << std::endl;
     }
 }

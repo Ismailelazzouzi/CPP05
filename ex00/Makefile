@@ -9,7 +9,7 @@ OBJS = $(addsuffix .o, $(FILES))
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Bureaucrat.hpp
 	$(CPP) -c $< -o $@
 
 $(NAME): $(OBJS)
