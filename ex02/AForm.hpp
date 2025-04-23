@@ -3,6 +3,7 @@
 #include <exception>
 
 class Bureaucrat;
+
 class AForm
 {
 private:
@@ -30,6 +31,7 @@ public:
     int         getexeGrade() const;
     bool               getState() const;
     void               beSigned(Bureaucrat const &Bureaucrat);
+    virtual bool               execute(Bureaucrat const & executor) const = 0;
     ~AForm();
 };
 

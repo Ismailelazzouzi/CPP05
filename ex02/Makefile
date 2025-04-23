@@ -4,6 +4,7 @@ RM = rm -f
 FILES = main \
 		Bureaucrat \
 		AForm \
+		ShrubberyCreationForm \
 
 SRCS = $(addsuffix .cpp, $(FILES))
 OBJS = $(addsuffix .o, $(FILES))

@@ -80,6 +80,10 @@ void    Bureaucrat::signAForm(AForm &AForm)
 {
     AForm.beSigned(*this);
 }
+bool    Bureaucrat::executeForm(AForm const & form) const
+{
+    return (form.execute(*this));
+}
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat &obj)
 {
