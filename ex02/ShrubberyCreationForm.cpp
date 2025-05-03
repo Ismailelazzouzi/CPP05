@@ -30,7 +30,7 @@ bool    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     std::string ext = "_shrubbery";
     std::string filename = target + ext;
     std::cout << filename << std::endl;
-    std::ofstream MyFile(this->target);
+    std::ofstream MyFile(filename);
     if (!MyFile.is_open())
     {
         std::cerr << "Error opening file !" << std::endl;
