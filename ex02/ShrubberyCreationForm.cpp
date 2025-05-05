@@ -32,6 +32,8 @@ const std::string ShrubberyCreationForm::getTarget() const
 
 bool    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+    if (!this->getState())
+        return (false);
     if (executor.getGrade() > 137)
         throw AForm::GradeTooLowException();
     else if (executor.getGrade() < 1)
@@ -54,4 +56,8 @@ bool    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     MyFile << "      ||";
     MyFile.close();
     return (true);
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
 }

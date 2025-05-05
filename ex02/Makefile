@@ -6,6 +6,7 @@ FILES = main \
 		AForm \
 		ShrubberyCreationForm \
 		PresidentialPardonForm \
+		RobotomyRequestForm \
 
 
 SRCS = $(addsuffix .cpp, $(FILES))

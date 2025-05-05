@@ -30,7 +30,7 @@ public:
     int getGrade() const;
     void    increment();
     void    decrement();
-    void    signAForm(AForm &AForm);
+    void    signAForm(AForm &AForm) const;
     bool    executeForm(AForm const & form) const;
 };
 

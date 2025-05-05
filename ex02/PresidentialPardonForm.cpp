@@ -32,10 +32,16 @@ const std::string PresidentialPardonForm::getTarget() const
 
 bool    PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
+    if (!this->getState())
+        return (false);
     if (executor.getGrade() > 5)
         throw AForm::GradeTooLowException();
     else if (executor.getGrade() < 1)
         throw AForm::GradeTooHighException();
     std::cout << executor << " Informs That " << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
     return (true);
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
 }
