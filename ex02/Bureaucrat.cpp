@@ -82,7 +82,13 @@ void    Bureaucrat::signAForm(AForm &AForm)
 }
 bool    Bureaucrat::executeForm(AForm const & form) const
 {
-    return (form.execute(*this));
+    if (form.execute(*this))
+    {
+        std::cout << *this << " executed " << form.getName() << std::endl;
+        return (true);
+    }
+    std::cout << *this << "couldn't execute " << form.getName() << std::endl;
+    return (false);
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat &obj)

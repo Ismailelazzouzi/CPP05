@@ -4,7 +4,6 @@
 #include <fstream>
 
 class Bureaucrat;
-
 class AForm
 {
 private:

@@ -5,6 +5,8 @@ FILES = main \
 		Bureaucrat \
 		AForm \
 		ShrubberyCreationForm \
+		PresidentialPardonForm \
+
 
 SRCS = $(addsuffix .cpp, $(FILES))
 OBJS = $(addsuffix .o, $(FILES))
