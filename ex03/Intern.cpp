@@ -1,5 +1,4 @@
 #include "Intern.hpp"
-#include "AForm.hpp"
 
 Intern::Intern()
 {
@@ -18,7 +17,33 @@ Intern::~Intern()
 {
 }
 
-AForm    *makeForm(std::string &name, std::string &target)
+AForm    *Intern::makeForm(std::string const &name, std::string const &target) const
 {
-    
+    for (size_t i = 0; i < 3; i++)
+    {
+        std::cout << "INTERN creates " << name << std::endl;
+        switch (i)
+        {
+            case 0: return (createRobotomy(target));
+            case 1: return (createPresidential(target));
+            case 2: return (createShrubbery(target));
+        }
+    }
+    std::cout << "Error : Form type " << name << " does not exist" <<std::endl;
+    return (NULL);
+}
+
+AForm   *Intern::createShrubbery(std::string const &target) const
+{
+    return (new ShrubberyCreationForm(target));
+}
+
+AForm   *Intern::createRobotomy(std::string const &target) const
+{
+    return (new RobotomyRequestForm(target));
+}
+
+AForm   *Intern::createPresidential(std::string const &target) const
+{
+    return (new PresidentialPardonForm(target));
 }

@@ -32,7 +32,7 @@ public:
     bool               getState() const;
     void               beSigned(Bureaucrat const &Bureaucrat);
     virtual bool               execute(Bureaucrat const & executor) const = 0;
-    ~AForm();
+    virtual ~AForm();
 };
 
 std::ostream    &operator<<(std::ostream &out, AForm &obj);
