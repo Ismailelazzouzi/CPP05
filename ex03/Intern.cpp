@@ -22,11 +22,15 @@ AForm    *Intern::makeForm(std::string const &name, std::string const &target) c
     for (size_t i = 0; i < 3; i++)
     {
         std::cout << "INTERN creates " << name << std::endl;
-        switch (i)
+        if (name == this->type[i])
         {
-            case 0: return (createRobotomy(target));
-            case 1: return (createPresidential(target));
-            case 2: return (createShrubbery(target));
+            std::cout << "INTERN creates " << name << std::endl;
+            switch (i)
+            {
+                case 0: return (createRobotomy(target));
+                case 1: return (createPresidential(target));
+                case 2: return (createShrubbery(target));
+            }
         }
     }
     std::cout << "Error : Form type " << name << " does not exist" <<std::endl;

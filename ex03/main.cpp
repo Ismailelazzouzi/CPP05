@@ -3,6 +3,7 @@
 
 int main(void)
 {
+    std::srand(static_cast<unsigned int>(std::time(0)));
     Intern someRandomIntern;
     
     AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
